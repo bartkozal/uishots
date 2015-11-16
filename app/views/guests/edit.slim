@@ -1,0 +1,27 @@
+h2 class="text-muted text-center margin-double-bottom"
+  | Become a member
+
+div class="grid grid-center"
+  div class="grid-item 1/3"
+    = form_for @guest, url: guest_path(@guest), metod: :patch, html: { class: 'form-stacked margin-base-bottom' } do |f|
+      - if @guest.errors.any?
+        #error_explanation class="box box-negative margin-base-bottom"
+          p= "#{pluralize(@guest.errors.count, "error")} prohibited:"
+          ul
+            - @guest.errors.full_messages.each do |message|
+              li = message
+
+      = f.label :username
+      = f.text_field :username, class: '1/1'
+
+      = f.label :email, 'E-mail'
+      = f.text_field :email, class: '1/1'
+
+      = f.label :password
+      = f.password_field :password, class: '1/1'
+
+      = f.label :password_confirmation, 'Repeat password'
+      = f.password_field :password_confirmation, class: '1/1'
+
+      div class="text-center"
+        = f.submit "Become a member"

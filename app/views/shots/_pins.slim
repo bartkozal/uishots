@@ -1,0 +1,6 @@
+- if logged_in? && current_user.not_saved_shot?(shot)
+  - if current_user.pinned_shot?(shot)
+    = link_to 'Unpin', pin_path(shot_id: shot.id, user_id: current_user.id), method: :delete, class: 'btn btn-unpin'
+  - else
+    = link_to 'Pin', pin_path(shot_id: shot.id, user_id: current_user.id), method: :create, class: 'btn btn-pin'
+

@@ -1,0 +1,23 @@
+div class="grid text-center"
+  div class="grid-item 1/1"
+    h1 class="brand-heading margin-base-bottom" Pinterest for User Interfaces
+
+    ul class="list-inline"
+      li= link_to "Start now without an account", guests_path, method: :post, class: "btn brand-btn"
+
+hr class="margin-triple-ends"
+
+div class="grid grid-center text-center"
+  div class="grid-item 2/5"
+    = image_tag 'save.png'
+    h2 class="brand-subheading"
+      | Save and share favorite<br> UI elements found on the Internet
+  div class="grid-item 1/10"
+  div class="grid-item 2/5"
+    = image_tag 'explore.png'
+    h2 class="brand-subheading"
+      | Explore huge UI library,<br> get inspired and pin existing shots
+
+hr class="margin-triple-ends"
+
+= render "how_it_works"

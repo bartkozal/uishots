@@ -1,0 +1,93 @@
+//= require jcrop
+//= require jquery.tagsinput
+//= require jquery-ui/autocomplete
+
+@import 'defaults'
+@import 'hocus-pocus/hocus-pocus'
+
+
+form
+  input[type="button"],
+  input[type="submit"]
+    @extend .btn
+
+h1, h2, h3, h4, h5, h6
+  color: $color-brand
+
+.brand-navbar
+  @include font-size(28)
+  font-family: $font-family-headings
+  color: $navbar-link-color
+
+.brand-btn
+  @include font-size(18)
+  padding: halve($spacing-unit) $spacing-unit
+
+.brand-heading
+  @include font-size(42)
+
+.brand-subheading
+  @include font-size(24)
+
+.navbar
+  margin-bottom: halve($spacing-unit)
+
+.text-muted
+  color: $color-grey
+
+.bookmarklet
+  color: $color-black
+  background-color: $color-silver
+  border-bottom: 1px solid darken($color-silver, 10%)
+  border-radius: 3px
+  padding: 3px 10px
+
+.footer
+  margin-top: quadruple($spacing-unit)
+  background-color: $color-brand
+  color: $color-white
+  padding: $spacing-unit
+
+  a
+    color: $navbar-link-background
+
+.shot
+  margin-bottom: $spacing-unit
+  margin-left: $spacing-unit
+  padding: quarter($spacing-unit)
+  display: inline-block
+  vertical-align: top
+  max-width: 350px
+  background-color: rgba($color-black, .05)
+
+  > img
+    box-shadow: 0 0 0 1px $color-silver
+    border: 1px solid $color-white
+    background-color: white
+
+.btn-pin,
+.btn-unpin,
+.btn-delete
+  @include font-size(12)
+
+.btn-unpin
+  background-color: $color-brand
+
+.btn-delete
+  background-color: $color-brand
+  margin-left: quarter($spacing-unit)
+
+.box-informative,
+.box-negative
+  border: 0
+
+.box-negative
+  background-color: rgba($color-btn, .1)
+  color: $color-btn
+
+.box-informative
+  background-color: rgba($color-blue, .1)
+  color: darken($color-blue, 40%)
+
+.img-loader img
+  background: white

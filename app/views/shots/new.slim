@@ -1,0 +1,42 @@
+- content_for :no_navbar, true
+
+p
+  | Crop element from the screenshot that is interesting for you, add tags and save the shot:<br>
+
+div class="grid grid-center"
+  div class="grid-item 3/5"
+    div class="img-loader js-img-loader js-cropper" data-tmp=@shot.tmp_image_url
+    div class="grid grid-middle js-img-loader-countdown"
+      div class="grid-item 1/5"
+        = image_tag "loader.gif"
+      div class="grid-item 3/5"
+        p class="text-muted"
+          ' Screenshot is being processed and will be available in:
+          strong
+            span class="js-countdown" 13
+            |  seconds
+    div class="box box-informative margin-base-top"
+      | If you don't see the screenshot please refresh this page when timer ends,
+        script can still processing. Sorry this code isn't perfect yet. :(
+  div class="grid-item 2/5"
+    = form_for @shot, html: { class: "form-stacked margin-base-bottom" } do |f|
+      - if @shot.errors.any?
+        #error_explanation class="box box-negative margin-base-bottom"
+          p= "#{pluralize(@shot.errors.count, "error")} prohibited this shot from being saved:"
+          ul
+            - @shot.errors.full_messages.each do |message|
+              li = message
+
+      = f.label :tag_list, "Tags"
+      = f.text_field :tag_list, class: "js-tags"
+      small class="text-muted"
+        | To add a new tag just type it and press ',' or 'enter'
+
+      = f.hidden_field :name
+      = f.hidden_field :url
+
+      - %w(x y w h).each do |attr|
+        = f.hidden_field "crop_#{attr}", class: "js-crop-#{attr}"
+
+      div class="margin-base-top"
+        = f.submit "Save this shot for me!"

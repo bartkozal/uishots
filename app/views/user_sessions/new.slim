@@ -1,0 +1,22 @@
+h2 class="text-muted text-center margin-double-bottom"
+  | Login
+
+div class="grid grid-center"
+  div class="grid-item 1/3"
+    = form_tag user_sessions_path, method: :post, class: "form-stacked margin-base-bottom" do
+      = label_tag :username
+      = text_field_tag :username, '', class: '1/1'
+
+      = label_tag :password
+      = password_field_tag :password, '', class: '1/1'
+
+      = label_tag do
+        = check_box_tag :remember, params[:remember], true
+        | Remember me
+
+      div class="text-center"
+        = submit_tag "Login now"
+
+    ul class="list-reset"
+      li= link_to "Don't have an account? Sign up!", new_user_path
+      li= link_to "Start now without an account.", guests_path, method: :post

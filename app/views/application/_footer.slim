@@ -1,0 +1,15 @@
+- rr_img_path = "https://d4nnn7wspfa3h.cloudfront.net/rails-rumble-badge-light.png"
+- rr_link = "http://railsrumble.com/?view=http://uishots.dev/"
+
+div class="sticky-footer"
+  div class="footer"
+    div class="container"
+      div class="grid grid-middle"
+        div class="grid-item 1/5"
+          = link_to image_tag(rr_img_path, class: 'img-responsive'), rr_link
+        div class="grid-item 4/5"
+          p class="no-margin-bottom text-small"
+            | This application was created in 48h for the
+              #{link_to "Rails Rumble", "http://railsrumble.com/entries/180-uishots"}
+              hackathon by #{link_to "Bartlomiej Kozal", "http://bkzl.github.io"}.
+              <br>Cookies are used to store sessions.
