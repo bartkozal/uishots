@@ -26,23 +26,12 @@ var updateCoords = function(coords) {
 };
 
 var imgLoader = $(".js-img-loader");
-var sleep = 13000;
 
-setTimeout(function() { imgLoader.image(imgLoader.data('tmp'), function() {
-  $('.js-img-loader-countdown').hide();
+imgLoader.image(imgLoader.data('tmp'), function() {
   imgLoader.children('img').Jcrop({
     setSelect: [0, 0, 400, 200],
     boxWidth: 500,
     onSelect: updateCoords,
     onChange: updateCoords
-  })}
-)}, sleep);
-
-$({countNum: 13}).animate({countNum: 0}, {
-  duration: sleep,
-  easing: 'linear',
-  step: function() {
-    $('.js-countdown').text(Math.ceil(this.countNum));
-  },
+  });
 });
-

@@ -1,6 +1,13 @@
+div class="margin-double-top"
+  div class="box box-informative text-center"
+    | This application was created in 48h for the
+      #{link_to "Rails Rumble", "http://railsrumble.com/entries/180-uishots"}
+      hackathon by #{link_to "Bartłomiej Kozal", "http://bkzl.github.io"}.
+
 div class="grid text-center"
   div class="grid-item 1/1"
-    h1 class="brand-heading margin-base-bottom" Pinterest for User Interfaces
+    h1 class="brand-heading margin-base-bottom"
+      | Save UI/UX elements found on the Internet
 
     ul class="list-inline"
       li= link_to "Start now without an account", guests_path, method: :post, class: "btn brand-btn"

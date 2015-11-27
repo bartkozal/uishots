@@ -17,7 +17,7 @@ h2 class="text-muted text-center margin-double-bottom"
     div class="grid-item 5/6"
       - @shots.each do |shot|
         div class="shot"
-          img src=shot.image_url class="img-responsive"
+          img src=shot.image class="img-responsive"
           div class="grid grid-middle grid-pair margin-quarter-top"
             div class="grid-item 1/6"
               = render 'shots/pins', shot: shot

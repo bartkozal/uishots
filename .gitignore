@@ -11,5 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
-/public/screenshots
 .env
+
+/public/screenshots
+/public/shots

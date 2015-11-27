@@ -1,0 +1,6 @@
+{
+  "name": "uishots",
+  "dependencies": {
+    "pageres-cli": "3.1.0"
+  }
+}

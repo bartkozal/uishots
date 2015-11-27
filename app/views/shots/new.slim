@@ -5,19 +5,7 @@ p
 
 div class="grid grid-center"
   div class="grid-item 3/5"
-    div class="img-loader js-img-loader js-cropper" data-tmp=@shot.tmp_image_url
-    div class="grid grid-middle js-img-loader-countdown"
-      div class="grid-item 1/5"
-        = image_tag "loader.gif"
-      div class="grid-item 3/5"
-        p class="text-muted"
-          ' Screenshot is being processed and will be available in:
-          strong
-            span class="js-countdown" 13
-            |  seconds
-    div class="box box-informative margin-base-top"
-      | If you don't see the screenshot please refresh this page when timer ends,
-        script can still processing. Sorry this code isn't perfect yet. :(
+    div class="img-loader js-img-loader js-cropper" data-tmp=@shot.screenshot_url
   div class="grid-item 2/5"
     = form_for @shot, html: { class: "form-stacked margin-base-bottom" } do |f|
       - if @shot.errors.any?

@@ -1,7 +1,11 @@
+ruby '2.3.0'
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.2'
 gem 'pg'
+gem 'puma'
+gem 'mini_magick'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -13,13 +17,7 @@ gem 'slim-rails'
 gem 'autoprefixer-rails'
 gem 'sorcery'
 gem 'bcrypt'
-gem 'screencap'
-gem 'mini_magick'
 gem 'jquery-ui-rails'
-gem 'rack-timeout'
-gem 'rails_12factor'
-gem 's3'
-gem 'sidekiq'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-hocus-pocus'
@@ -37,10 +35,14 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'dotenv-rails'
+end
+
+group :test do
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
+  gem 'factory_girl_rails'
 end
 
 group :production do
-  gem 'puma'
+  gem 'rails_12factor'
 end
-
